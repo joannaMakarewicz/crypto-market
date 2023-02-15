@@ -1,20 +1,20 @@
-import React from 'react'
-import CoinItem from './CoinItem'
-import Coin from '../pages/Coin'
-import { Link } from 'react-router-dom'
-import './Coins.scss'
+import React from 'react';
+import CoinItem from './CoinItem';
+import Coin from '../pages/Coin';
+import { Link } from 'react-router-dom';
+import './Coins.scss';
 
 const Coins = (props) => {
 
   return (
-    <div className='container'>
-        <div className='heading'>
+    <main className='container'>
+        <div className='coins'>
             <p>#</p>
-            <p className='coin-name'>Coin</p>
+            <p className='coins__name'>Coin</p>
             <p>Price</p>
             <p>24h</p>
-            <p className='hide-mobile'>Volume</p>
-            <p className='hide-mobile'>Mkt Cap</p>
+            <p className='coins__mobile'>Volume</p>
+            <p className='coins__mobile'>Mkt Cap</p>
         </div>
 
         {props.coins.map(coins => {
@@ -24,7 +24,7 @@ const Coins = (props) => {
                 </Link>
             )
         })}
-    </div>
+    </main>
   )
 }
 

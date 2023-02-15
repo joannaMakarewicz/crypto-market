@@ -1,0 +1,20 @@
+.navbar {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin:16px;
+    &__heading {
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+    &__icon {
+        font-size: 3rem;
+        color: #e85d04;
+    }
+    &__special {
+        color: #e85d04;
+    }
+}
+
+
+

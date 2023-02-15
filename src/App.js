@@ -4,7 +4,6 @@ import axios from "axios";
 import Coins from "./components/Coins";
 import Navbar from "./components/Navbar";
 import Coin from "./pages/Coin";
-import "./App.scss";
 
 function App() {
   const [coins, setCoins] = useState([]);
@@ -24,7 +23,6 @@ function App() {
   }, []);
 
   return (
-    <div>
       <Router>
         <Navbar />
         <Routes>
@@ -34,7 +32,6 @@ function App() {
           </Route>
         </Routes>
       </Router>
-    </div>
   );
 }
 

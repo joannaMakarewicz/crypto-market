@@ -23,29 +23,29 @@ const Coin = () => {
   }, [url]);
 
   return (
-    <div>
-      <div className="coin-container">
-        <div className="content">
+    <main>
+      <section className="coin">
+        <header className="coin__content">
           <h1>{coin.name}</h1>
-        </div>
-        <div className="content">
+        </header>
+        <article className="coin__content">
           <div className="rank">
-            <span className="rank-btn">Rank # {coin.market_cap_rank}</span>
+            <span className="rank__btn">Rank # {coin.market_cap_rank}</span>
           </div>
           <div className="info">
-            <div className="coin-heading">
+            <div className="info__heading">
               {coin.image ? <img src={coin.image.small} alt="img" /> : null}
               <p>{coin.name}</p>
               <p>{coin.symbol}</p>
             </div>
-            <div className="coin-price">
+            <div className="info__price">
               {coin.market_data?.current_price ? (
                 <h1>$ {coin.market_data.current_price.pln.toLocaleString()}</h1>
               ) : null}
             </div>
           </div>
-        </div>
-        <div className="content">
+        </article>
+        <article className="coin__content">
           <table>
             <thead>
               <tr>
@@ -121,31 +121,31 @@ const Coin = () => {
               </tr>
             </tbody>
           </table>
-        </div>
-        <div className="content">
+        </article>
+        <article className="coin__content">
           <div className="stats">
-            <div className="left">
-              <div className="row">
+            <div className="stats__left">
+              <div className="stats__row">
                 <h4>24 Hour Low</h4>
                 {coin.market_data?.low_24h ? (
                   <p>${coin.market_data.low_24h.usd.toLocaleString()}</p>
                 ) : null}
               </div>
-              <div className="row">
+              <div className="stats__row">
                 <h4>24 Hour High</h4>
                 {coin.market_data?.high_24h ? (
                   <p>${coin.market_data.high_24h.usd.toLocaleString()}</p>
                 ) : null}{" "}
               </div>
             </div>
-            <div className="right">
-              <div className="row">
+            <div className="stats__right">
+              <div className="stats__row">
                 <h4>Market Cap</h4>
                 {coin.market_data?.market_cap ? (
                   <p>${coin.market_data.market_cap.usd.toLocaleString()}</p>
                 ) : null}
               </div>
-              <div className="row">
+              <div className="stats__row">
                 <h4>Circulating Supply</h4>
                 {coin.market_data ? (
                   <p>{coin.market_data.circulating_supply}</p>
@@ -153,9 +153,8 @@ const Coin = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="content">
+        </article>
+        <article className="coin__content">
           <div className="about">
             <h3>About</h3>
             <p
@@ -166,9 +165,9 @@ const Coin = () => {
               }}
             ></p>
           </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </main>
   );
 };
 

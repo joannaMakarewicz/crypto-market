@@ -3,11 +3,14 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./Coin.scss";
 import DOMPurify from "dompurify";
+import useWebsiteTitle from "../hooks/useWebsiteTitle";
 
 const Coin = () => {
   const [coin, setCoin] = useState([]);
 
   const params = useParams();
+  const setTitle = useWebsiteTitle();
+
 
   const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
 
@@ -16,11 +19,14 @@ const Coin = () => {
       .get(url, { method: "GET" })
       .then((res) => {
         setCoin(res.data);
+        setTitle(res.data.id.toUpperCase())
       })
       .catch((error) => {
         console.log(error);
       });
   }, [url]);
+
+
 
   return (
     <main>
